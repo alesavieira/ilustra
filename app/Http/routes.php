@@ -14,13 +14,20 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('site.index');
     });
 
 });
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    
+    Route::group(['prefix' => 'painel'], function() {
+
+         
+        Route::controller('/', 'Painel\PainelController');
+       
+    });
 
     Route::get('/home', 'HomeController@index');
 });
