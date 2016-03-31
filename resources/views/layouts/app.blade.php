@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{url('/css/style.css')}}" rel="stylesheet">
 
     <style>
         body {
@@ -27,6 +28,7 @@
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
+        
         <div class="container">
             <div class="navbar-header">
 
@@ -40,7 +42,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Home
+                    Página Inicial
                 </a>
             </div>
 
@@ -71,12 +73,16 @@
                 </ul>
             </div>
         </div>
+    
     </nav>
 
     @yield('content')
+    <footer>
+        <p>Ilustrações com fonte de matéria - 2016 Copyright - Todos os direitos reservados | Desenvolvido por Alessandro Vieira | Utilizando Framework PHP Laravel  </p>
+    </footer>
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{{ url('js/jquery-2.1.4.min.js')}}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>

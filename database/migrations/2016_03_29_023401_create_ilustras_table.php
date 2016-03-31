@@ -14,7 +14,7 @@ class CreateIlustrasTable extends Migration
     {
         Schema::create('ilustras', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descricao');
+            $table->longText('descricao');
             $table->integer('id_categoria');
             $table->string('fonte',40);
             $table->timestamps();
