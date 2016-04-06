@@ -8,7 +8,7 @@
                 <div class="panel-heading">Categorias</div>
 
                 <div class="panel-body">
-                    <form  role="form" method="GET" action="{{ url('/ilustracoes/pesquisar') }}">
+                    <form  role="form" method="POST" action="{{ url('/ilustracoes/pesquisar/') }}">
                         {!! csrf_field() !!}
 
                         {!!Form::select('id_categoria', $categorias, null, ['class' => 'form-control'])!!} 
@@ -23,10 +23,31 @@
         </div>
         <div class="col-md-9 ">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
+                <div class="panel-heading">Ilustrações </div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Ilustração</th>
+                            <th>Fonte de Matéria</th>
+                        </tr>
+                        @forelse($data as $ilustra)
+                        <tr>
+                            <td>{{$ilustra->categoria}}</td>
+                            <td>{{$ilustra->descricao}}</td>
+                            <td>{{$ilustra->fonte}}</td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="500">Nenhuma Ilustraçao encontrada!</td>
+                        </tr>
+                        @endforelse
+                    </table>
+
+                    <nav>
+                        {!!$data->render()!!}
+                    </nav>
                 </div>
             </div>
         </div>

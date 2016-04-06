@@ -33,4 +33,5 @@ Route::group(['middleware' => 'web'], function () {
     
 });
 
+Route::controller('/ilustracoes', 'IlustracoesController');
 Route::controller('/', 'HomeController');

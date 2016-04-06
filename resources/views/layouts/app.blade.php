@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+   <title>{{$titulo or 'Painel | Ilustrações com fonte de matéria'}}</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -51,6 +51,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/ilustracoes') }}">Ilustrações</a></li>
                     <li><a href="{{ url('/painel') }}">Área Restrita</a></li>
+                    <li><a href="{{ url('/contato') }}">Envie uma ilustração</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
