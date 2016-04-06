@@ -1,29 +1,21 @@
-@extends('layouts.app')
+
+  @extends('painel.templates.index')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-2 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Categorias</div>
 
-                <div class="panel-body">
-                    <ul>
-                        <li>Categoria 1</li>
-                        <li>Categoria 2</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+<h1 class="titulo-pg-painel">Dashboard</h1>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+<div class="divider"></div>
+
+<div class="conteudo-listagens">
+    <div class="Dashboard1 col-md-6">
+       <i class="fa fa-floppy-o"></i><p class="principal"><a class="Dashboard" href="{{url('/painel/categorias')}}"><b>Categorias Cadastradas: {{$cat}}</b></a></p>
     </div>
+    <div class="Dashboard2 col-md-6">
+        <i class="fa fa-file-text"></i><p class="principal"><a class="Dashboard" href="{{url('/painel/ilustracoes')}}"><b>Ilustrações Cadastradas: {{$ilustra}}</b></a></p>
+    </div>
+    
 </div>
+
+
 @endsection

@@ -23,8 +23,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
     
     Route::group(['prefix' => 'painel'], function() {
-
-         
+        
+        Route::controller('categorias', 'Painel\CategoriaController'); 
+        Route::controller('ilustracoes', 'Painel\IlustraController'); 
         Route::controller('/', 'Painel\PainelController');
        
     });

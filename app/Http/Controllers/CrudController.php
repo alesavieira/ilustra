@@ -72,4 +72,14 @@ abstract class CrudController extends BaseController
         
         return 1;
     }
+    public function getPesquisar($palavraPesquisa = ''){
+         
+          $data = $this->model->where('nome', 'LIKE', "%{$palavraPesquisa}%")->paginate($this->totalItensPorPagina);
+
+           $titulo = "Resultados para a pesquisa: {$palavraPesquisa}";
+
+           return view("painel.{$this->nameView}.index", compact('data', 'titulo'));
+
+
+    }
 }
